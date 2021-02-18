@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>PostList</title>
-  </head>
-  <body>
-<div class="ashik">
-    <h1>Mohmad Ashik M A</h1>
-    <p>Don't tell me to remove my headphones I care myself more than you do...	&#128521; </p>
-    <p>If you wanna do it,Do it.Tellers won't do anything</p>
-    <h2>Life is nothing without Love and Dream</h2>
-  </div>
+{% extends 'blog/base.html'%}
+{% block content%}
 {% for post in posts %}
-  {{post}}
+<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+  <h4>{{post.text}}</h4> <br>
+ <p>{{post.published_date}}</p>
 {%endfor%}
- <h1>DhoomDham AK</h1>
-  <p>I know what to do even I have no dreams Then Why should I feel? Be happy.</p>
-  <p>how is this going?</p>
-  </body>
-</html>
+{% endblock %}
